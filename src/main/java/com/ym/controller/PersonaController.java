@@ -18,11 +18,11 @@ public class PersonaController {
 	@GetMapping("/persona")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		
-		//Persona p = new Persona();
-		//p.setIdPersona(0);
-		//p.setNombre("Ely Hermosa");
+		Persona p = new Persona();
+		p.setIdPersona(1);
+		p.setNombre("Montse Consentida");
 		
-		//repo.save(p);
+		repo.save(p);
 		
 		model.addAttribute("name", name);
 		return "greeting";
