@@ -3,6 +3,7 @@ package com.ym.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,9 @@ public class UsuarioRestController {
 	@Autowired
 	private IUsuarioRepo repo;
 	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
 	@GetMapping
 	public List<Usuario> listarUsuario(){
 		return repo.findAll();
@@ -35,6 +39,8 @@ public class UsuarioRestController {
 	
 	@PutMapping
 	public void ModificarUsuario(@RequestBody Usuario obj){
+		String passEncode = obj.getPassword();
+		obj.setPassword(encoder.encode(passEncode));
 		repo.save(obj);
 	}
 
