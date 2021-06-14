@@ -24,8 +24,8 @@ public class UsuarioRestController {
 	@Autowired
 	private IUsuarioRepo repo;
 	
-	@Autowired
-	private BCryptPasswordEncoder encoder;
+	//@Autowired
+	//private BCryptPasswordEncoder encoder;
 	
 	@GetMapping
 	public List<Usuario> listarUsuario(){
@@ -39,8 +39,8 @@ public class UsuarioRestController {
 	
 	@PutMapping
 	public void ModificarUsuario(@RequestBody Usuario obj){
-		String passEncode = obj.getPassword();
-		obj.setPassword(encoder.encode(passEncode));
+		//String passEncode = obj.getPassword();
+		//obj.setPassword(encoder.encode(passEncode));
 		repo.save(obj);
 	}
 

@@ -16,9 +16,9 @@ import com.ym.model.Usuario;
 import com.ym.repo.IUsuarioRepo;
 
 @Service
-public class UserService implements UserDetailsService {
+public class UserService {
 	
-	private IUsuarioRepo repo;
+	/*private IUsuarioRepo repo;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -30,6 +30,6 @@ public class UserService implements UserDetailsService {
 		
 		UserDetails userDet =  new User(us.getNombre(), us.getPassword(), roles);
 		return userDet;
-	}
+	}*/
 
 }
