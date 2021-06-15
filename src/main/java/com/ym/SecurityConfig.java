@@ -19,7 +19,7 @@ public class SecurityConfig {
 	private UserService UserDetailServ;
 	
 	@Autowired
-	private BCryptPasswordEncoder encoder;
+	private BCryptPasswordEncoder encoder
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {	
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
