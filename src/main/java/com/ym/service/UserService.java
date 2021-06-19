@@ -4,6 +4,7 @@ package com.ym.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -16,9 +17,10 @@ import com.ym.model.Usuario;
 import com.ym.repo.IUsuarioRepo;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 	
-	/*private IUsuarioRepo repo;
+	@Autowired
+	private IUsuarioRepo repo;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -30,6 +32,6 @@ public class UserService {
 		
 		UserDetails userDet =  new User(us.getNombre(), us.getPassword(), roles);
 		return userDet;
-	}*/
+	}
 
 }

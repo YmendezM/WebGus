@@ -24,8 +24,8 @@ public class UsuarioRestController {
 	@Autowired
 	private IUsuarioRepo repo;
 	
-	//@Autowired
-	//private BCryptPasswordEncoder encoder;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	@GetMapping
 	public List<Usuario> listarUsuario(){

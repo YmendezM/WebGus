@@ -16,8 +16,8 @@ public class PersonaController {
 	@Autowired
 	private IPersonaRepo repo;
 	
-	//@Autowired
-	//private BCryptPasswordEncoder encoder;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	@GetMapping("/persona")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
