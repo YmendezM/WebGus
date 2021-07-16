@@ -26,8 +26,8 @@ public class UsuarioTestUnit {
 	public void crearUsuarioTest(){
 		Usuario us = new Usuario();
 		us.setId(3);
-		us.setNombre("montse");
-		us.setPassword(encoder.encode("123456"));
+		us.setNombre("Ysmendezm");
+		us.setPassword(encoder.encode(""));
 		Usuario retorno = repo.save(us);
 		assertTrue(retorno.getPassword().equalsIgnoreCase(us.getPassword()));
 	}

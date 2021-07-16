@@ -10,6 +10,7 @@ public class Persona {
 	private int idPersona;
 	@Column(name = "user_nombre", length = 50)
 	private String nombre;
+	private String apellido;
 	
 	public int getIdPersona() {
 		return idPersona;
